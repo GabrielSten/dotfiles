@@ -1,0 +1,25 @@
+import = ["~/.config/alacritty/themes/tokyo-night.toml"]
+
+[font]
+offset = { x = 0, y = 10 }
+normal = { family = "Andale Mono", style = "Regular" }
+bold = { family = "Andale Mono", style = "Bold" }
+italic = { family = "Andale Mono", style = "Italic" }
+size = 14.0
+
+#change cursor type Beam,Block,Underline
+[cursor]
+style = "Block"
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+#startup modes:Windowed, Maximized, Fullscreen
+[window]
+dynamic_padding = false
+opacity = 1
+title = "Alacritty"
+startup_mode = "Maximized"
+class = { general = "Alacritty", instance = "Alacritty" }
+padding = { x = 4, y = 0 }
