@@ -33,14 +33,12 @@ zinit light Aloxaf/fzf-tab
 
 # Add in snippets from https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 zinit snippet OMZP::git
-zinit snippet OMZP::docker
+#zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
-zinit snippet OMZP::helm
 zinit snippet OMZP::golang
 zinit snippet OMZP::npm
-zinit snippet OMZP::npx
 zinit snippet OMZP::gpg-agent
 zinit snippet OMZP::command-not-found
 
