@@ -8,7 +8,7 @@ This repository contains all my dotfiles using stow.
 
 ### macOS
 ```bash
-brew install git stow bash zoxide fzf
+brew install git stow bash zoxide fzf nvm
 ```
 
 ### fedora
