@@ -1,8 +1,8 @@
-# dotfiles repo
+# Dotfiles repository
 
 This repository contains all my dotfiles using [GNU stow](https://www.gnu.org/software/stow/).
 
-## reqirements
+## Reqirements
 
 [Jetbrains Mono](https://www.jetbrains.com/lp/mono/) as a font.
 
@@ -26,11 +26,18 @@ sudo dnf install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
 sudo apt install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
 ```
 
-## install dotfiles
+## How to stow dotfiles
+
+clone the repository to $HOME
 
 ```bash
-git clone git@github.com:GabrielSten/dotfiles.git
-cd dotfiles
+git clone git@github.com:GabrielSten/dotfiles.git ~
+```
+
+cd into the relevant OS.
+
+```bash
+cd dotfiles/xOS
 ```
 
 ```bash
