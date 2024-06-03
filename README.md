@@ -26,7 +26,7 @@ sudo dnf install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
 sudo apt install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
 ```
 
-## How to stow dotfiles
+## How to stow the dotfiles
 
 clone the repository to $HOME
 
