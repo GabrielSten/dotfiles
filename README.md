@@ -31,14 +31,16 @@ sudo apt install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
 clone the repository to $HOME
 
 ```bash
-git clone git@github.com:GabrielSten/dotfiles.git ~
+git clone git@github.com:GabrielSten/dotfiles.git ~/dotfiles
 ```
 
-cd into the relevant OS.
+cd into the relevant OS. \<xOS>: macOS | fedora | rpiOS
 
 ```bash
-cd dotfiles/xOS
+cd ~/dotfiles/<xOS>
 ```
+
+stow the dotfiles and create symlinks to $HOME
 
 ```bash
 stow .
