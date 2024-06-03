@@ -8,16 +8,22 @@ This repository contains all my dotfiles using [GNU stow](https://www.gnu.org/so
 
 [NVM as a package manager](https://nodejs.org/en/download/package-manager) for NodeJS
 
-### macOS
+### macOS 💼
 
 ```bash
 brew install git stow bash zsh tmux zoxide fzf nvm
 ```
 
-### fedora
+### fedora 🏡
 
 ```bash
-sudo dnf install git stow bash zsh tmux zoxide fzf
+sudo dnf install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
+```
+
+### rpiOS 🧪
+
+```bash
+sudo apt install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
 ```
 
 ## install dotfiles
