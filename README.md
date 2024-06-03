@@ -11,7 +11,7 @@ This repository contains all my dotfiles using [GNU stow](https://www.gnu.org/so
 ### macOS 💼
 
 ```bash
-brew install git stow bash zsh tmux zoxide fzf nvm
+brew install git stow bash zsh tmux zoxide fzf nvm font-jetbrains-mono
 ```
 
 ### fedora 🏡
