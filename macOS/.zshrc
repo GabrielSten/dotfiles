@@ -86,6 +86,7 @@ alias ls='ls --color'
 alias pass="gopass"
 alias vim='nvim'
 alias c='clear'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Shell integrations
 eval "$(fzf --zsh)"
