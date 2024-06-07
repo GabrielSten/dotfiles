@@ -14,16 +14,10 @@ This repository contains all my dotfiles using [GNU stow](https://www.gnu.org/so
 brew install git stow bash zsh tmux zoxide fzf nvm font-jetbrains-mono
 ```
 
-### fedora 🏡
+### linux 🏡
 
 ```bash
-sudo dnf install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
-```
-
-### rpiOS 🧪
-
-```bash
-sudo apt install git stow bash zsh tmux zoxide fzf jetbrains-mono-fonts
+sudo dnf install git stow bash zsh tmux zoxide fzf
 ```
 
 ## How to stow the dotfiles
@@ -43,5 +37,5 @@ cd ~/dotfiles/<xOS>
 stow the dotfiles and create symlinks to $HOME
 
 ```bash
-stow .
+stow . -t ~
 ```
