@@ -31,3 +31,5 @@ gpgconf --launch gpg-agent
 alias pass="gopass"
 
 source <(gopass completion bash)
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
