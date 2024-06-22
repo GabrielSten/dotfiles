@@ -46,6 +46,15 @@ zinit snippet OMZP::npm
 zinit snippet OMZP::gpg-agent
 zinit snippet OMZP::command-not-found
 
+# Brew completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Load completions
 autoload -Uz compinit && compinit
 
@@ -87,7 +96,12 @@ alias pass="gopass"
 alias vim='nvim'
 alias c='clear'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias ggraph="git log --all --decorate --oneline --graph"
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Gopass completion
+fpath=( ${GOPATH}/src/github.com/justwatchcom/gopass/completions "${fpath[@]}" )
+
