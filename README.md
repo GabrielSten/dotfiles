@@ -8,6 +8,10 @@ This repository contains all my dotfiles using [GNU stow](https://www.gnu.org/so
 
 [NVM as a package manager](https://nodejs.org/en/download/package-manager) for NodeJS
 
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ### macOS 💼
 
 ```bash
@@ -41,7 +45,7 @@ clone the repository to $HOME
 git clone git@github.com:GabrielSten/dotfiles.git ~/dotfiles
 ```
 
-cd into the relevant OS. \<xOS>: macOS | fedora | rpiOS
+cd into the relevant OS. \<xOS>: macOS | fedora
 
 ```bash
 cd ~/dotfiles/<xOS>
