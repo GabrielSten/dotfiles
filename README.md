@@ -56,3 +56,4 @@ stow the dotfiles and create symlinks to $HOME
 ```bash
 stow . -t ~
 ```
+
