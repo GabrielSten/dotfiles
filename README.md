@@ -15,7 +15,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ### macOS 💼
 
 ```bash
-brew install git stow bash zsh tmux zoxide fzf nvm font-jetbrains-mono
+brew install git stow bash zsh tmux zoxide fzf nvm font-jetbrains-mono ripgrep luarocks nvim
 ```
 
 ### linux 🏡
@@ -56,4 +56,3 @@ stow the dotfiles and create symlinks to $HOME
 ```bash
 stow . -t ~
 ```
-
