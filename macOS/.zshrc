@@ -66,12 +66,6 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Keybindings (emac hotkeys for zsh)
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^[w' kill-region
-
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -92,7 +86,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-
 # Aliases
 alias ls='ls --color'
 alias pass="gopass"
@@ -100,6 +93,22 @@ alias vim='nvim'
 alias c='clear'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias ggraph="git log --all --decorate --oneline --graph"
+alias tmux-sessionizer="~/bin/.local/scripts/tmux-sessionizer"
+
+# Create a Zsh widget that runs the tmux-sessionizer
+zle_tmux_sessionizer() {
+  ~/bin/.local/scripts/tmux-sessionizer
+}
+
+# Tell Zsh that this function is a widget
+zle -N zle_tmux_sessionizer
+
+# Keybindings (emac hotkeys for zsh)
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
+bindkey '^f' zle_tmux_sessionizer
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -123,4 +132,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
