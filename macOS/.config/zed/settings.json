@@ -14,11 +14,22 @@
     },
     "version": "2"
   },
+  "show_inline_completions": false,
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "vim_mode": true,
   "relative_line_numbers": true,
+  "keybindings": {
+    "cmd-k cmd-left": ["workspace::ActivatePaneInDirection", "Left"],
+    "cmd-k cmd-right": ["workspace::ActivatePaneInDirection", "Right"],
+    "cmd-k cmd-up": ["workspace::ActivatePaneInDirection", "Up"],
+    "cmd-k cmd-down": ["workspace::ActivatePaneInDirection", "Down"],
+    "cmd-k shift-left": ["workspace::SwapPaneInDirection", "Left"],
+    "cmd-k shift-right": ["workspace::SwapPaneInDirection", "Right"],
+    "cmd-k shift-up": ["workspace::SwapPaneInDirection", "Up"],
+    "cmd-k shift-down": ["workspace::SwapPaneInDirection", "Down"]
+  },
   "theme": {
     "mode": "system",
     "light": "One Light",
