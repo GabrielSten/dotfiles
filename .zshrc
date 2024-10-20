@@ -10,16 +10,17 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
 # gpg-agent
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-
-export PATH=/usr/local/cuda/bin:$PATH
+gpgconf --launch gpg-agent
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-# Path
-PATH=$PATH:~/.local/bin
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -49,6 +50,15 @@ zinit snippet OMZP::npm
 zinit snippet OMZP::gpg-agent
 zinit snippet OMZP::command-not-found
 
+# Brew completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Load completions
 autoload -Uz compinit && compinit
 
@@ -56,12 +66,6 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Keybindings (emac hotkeys for zsh)
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^[w' kill-region
 
 # History
 HISTSIZE=5000
@@ -83,14 +87,33 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-
 # Aliases
 alias ls='ls --color'
 alias pass="gopass"
 alias vim='nvim'
 alias c='clear'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias ggraph="git log --all --decorate --oneline --graph"
+alias tmux-sessionizer="~/bin/.local/scripts/tmux-sessionizer"
+
+# Create a Zsh widget that runs the tmux-sessionizer
+zle_tmux_sessionizer() {
+  ~/bin/.local/scripts/tmux-sessionizer
+}
+
+# Tell Zsh that this function is a widget
+zle -N zle_tmux_sessionizer
+
+# Keybindings (emac hotkeys for zsh)
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
+bindkey '^f' zle_tmux_sessionizer
 
 # Shell integrations
-eval "$(zoxide init --cmd cd zsh)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+
+# Gopass completion
+fpath=( ${GOPATH}/src/github.com/justwatchcom/gopass/completions "${fpath[@]}" )
