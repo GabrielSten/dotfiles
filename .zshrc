@@ -96,13 +96,19 @@ alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias ggraph="git log --all --decorate --oneline --graph"
 alias tmux-sessionizer="~/bin/.local/scripts/tmux-sessionizer"
 
-# Create a Zsh widget that runs the tmux-sessionizer
+# Create widgets
 zle_tmux_sessionizer() {
   ~/bin/.local/scripts/tmux-sessionizer
 }
 
-# Tell Zsh that this function is a widget
+cht_sessionizer() {
+  echo "Calling cht_sessionizer"
+  ~/bin/.local/scripts/cht.sh
+}
+
+# Tell Zsh about widgets
 zle -N zle_tmux_sessionizer
+zle -N cht_sessionizer
 
 # Keybindings (emac hotkeys for zsh)
 bindkey -e
@@ -110,6 +116,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 bindkey '^f' zle_tmux_sessionizer
+bindkey '^j' cht_sessionizer
 
 # Shell integrations
 eval "$(fzf --zsh)"
