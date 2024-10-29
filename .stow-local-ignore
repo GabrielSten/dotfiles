@@ -3,4 +3,7 @@
 \.gitmodules
 
 .config/zed/conversations/
-
+.config/zed/embeddings/
+.config/zed/prompts/
+.config/github-copilot
+.config/gopass
