@@ -7,3 +7,5 @@
 .config/zed/prompts/
 .config/github-copilot
 .config/gopass
+.config/gh/
+.config/gtk-2.0/
